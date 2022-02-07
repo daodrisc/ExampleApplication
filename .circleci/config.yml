@@ -16,7 +16,7 @@ jobs:
     working_directory: ~/ExampleApplication
     docker:
       - image: circleci/node:16.13.2
-      steps:
+    steps:
         - checkout
         - run:
             name: update-npm
@@ -29,7 +29,7 @@ jobs:
             name: install-npm
             command: npm install
 
-        -save_cache:
-          key: dependency-cache-{{ checksum "package-lock.json" }}
-          paths:
+        - save_cache:
+            key: dependency-cache-{{ checksum "package-lock.json" }}
+            paths:
             - ./node_modules
