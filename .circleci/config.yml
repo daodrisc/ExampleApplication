@@ -29,7 +29,7 @@ jobs:
             name: install-npm
             command: npm install
 
-        -save_cache:
-          key: dependency-cache-{{ checksum "package-lock.json" }}
-          paths:
+        - save_cache:
+            key: dependency-cache-{{ checksum "package-lock.json" }}
+            paths:
             - ./node_modules
